@@ -16,7 +16,7 @@ else
 		filename=$(echo $2 | md5sum)
 	fi
 
-	output=''
+	output=""
 	$2 | {
 		while IFS= read -r line
 		do
@@ -24,7 +24,7 @@ else
 			echo "$line"
 		done
 
-		echo $output >| "$directory/$1/$filename"
+		echo -e "$output" >| "$directory/$1/$filename"
   }
 
 	git -C "$directory" add .
