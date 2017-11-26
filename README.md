@@ -20,7 +20,7 @@ It's recommended to have `recon.sh` commit to a private repository. Create one f
 recon.sh init ~/location/of/recon-data
 ```
 
-# Usage
+# Tracking
 When the tool is properly installed, output of commands can be captured globally and can be stored in the designated git repository. Consider the following `nmap` command:
 
 ```
@@ -41,3 +41,36 @@ Nmap done: 1 IP address (1 host up) scanned in 13.09 seconds
 ```
 
 In the example above, the output of the command is shown in the terminal as it normally would. However, when it is finished, it commits it to the directory with a special name. When you'd run the same command, it'd overwrite the file. This is especially useful when comparing output of the same command with `git diff`.
+
+# History
+Because the output of the same command is kept in the same file, a clean and browsable format of the differences can be generated. Here's an example:
+
+```
+$ recon.sh history hackerone 'nmap -Pn -p 80,443 hackerone.com'
+
+commit 2de16412e7525d3fd9f18e7230311de26f042ad8 (HEAD -> master)
+Author: Jobert Abma <jobert@hackerone.com>
+Date:   Sat Nov 25 21:11:22 2017 -0800
+
+    Tracked output for hackerone ("nmap -Pn -p 80,443 hackerone.com")
+
+diff --git a/hackerone/08434d2228d58fec3e7c13b0b61f9c9b b/hackerone/08434d2228d58fec3e7c13b0b61f9c9b
+index 169fae9..cf35206 100644
+--- a/hackerone/08434d2228d58fec3e7c13b0b61f9c9b
++++ b/hackerone/08434d2228d58fec3e7c13b0b61f9c9b
+@@ -1,12 +1,12 @@
+
+-Starting Nmap 7.60 ( https://nmap.org ) at 2017-11-25 21:08 PST
++Starting Nmap 7.60 ( https://nmap.org ) at 2017-11-25 21:11 PST
+ Nmap scan report for hackerone.com (104.16.99.52)
+-Host is up (0.010s latency).
++Host is up (0.0083s latency).
+ Other addresses for hackerone.com (not scanned): 2400:cb00:2048:1::6810:6334 2400:cb00:2048:1::6810:6434 104.16.100.52
+
+ PORT    STATE SERVICE
+ 80/tcp  open  http
++443/tcp open  https
+
+-Nmap done: 1 IP address (1 host up) scanned in 16.09 seconds
++Nmap done: 1 IP address (1 host up) scanned in 13.06 seconds
+```
