@@ -4,19 +4,19 @@ This tool is for the computer hacking community and gives a framework for storin
 # Installation
 The tools are written in bash and have been tested on Mac OS and Linux. `git` is required to be installed in order to use the software. To install the latest version of the tool, clone this repository:
 
-```
+```bash
 git clone git@github.com:jobertabma/recon.sh
 ```
 
 To make it easier to execute the `recon.sh` helper from the command line, add the following line to your profile:
 
-```
+```bash
 alias recon.sh=~/location/of/recon.sh
 ```
 
 It's recommended to have `recon.sh` commit to a private repository. Create one for yourself, clone it locally, and run:
 
-```
+```bash
 recon.sh init ~/location/of/recon-data
 ```
 
@@ -45,7 +45,7 @@ In the example above, the output of the command is shown in the terminal as it n
 # History
 Because the output of the same command is kept in the same file, a clean and browsable format of the differences can be generated. Here's an example:
 
-```
+```diff
 $ recon.sh history hackerone 'nmap -Pn -p 80,443 hackerone.com'
 
 commit 2de16412e7525d3fd9f18e7230311de26f042ad8 (HEAD -> master)
