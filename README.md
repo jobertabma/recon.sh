@@ -74,3 +74,19 @@ index 169fae9..cf35206 100644
 -Nmap done: 1 IP address (1 host up) scanned in 16.09 seconds
 +Nmap done: 1 IP address (1 host up) scanned in 13.06 seconds
 ```
+
+# Search
+There's a lot of different reasons why you'd want to come back and search through output. The `recon.sh search` tool does exactly that. It allows a regular expression ([ERE](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions)) to be passed to it to search through command output. It'll search through commands as well as the output.
+
+```
+hackerone/08434d2228d58fec3e7c13b0b61f9c9b
+Nmap scan report for hackerone.com (104.16.99.52)
+Host is up (0.0083s latency).
+Other addresses for hackerone.com (not scanned): 2400:cb00:2048:1::6810:6334 2400:cb00:2048:1::6810:6434 104.16.100.52
+
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 13.06 seconds
+```
