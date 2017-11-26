@@ -12,6 +12,9 @@ case $1 in
 		"sync")
 		$dir/recon-sync.sh
 		;;
+    "history")
+		$dir/recon-history.sh "$2" "$3"
+		;;
 		*)
 		echo "usage: recon.sh {init|track|sync} [<args>]"
 		;;
