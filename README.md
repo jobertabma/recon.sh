@@ -23,9 +23,11 @@ recon.sh init ~/location/of/recon-data
 # Tracking
 When the tool is properly installed, output of commands can be captured globally and can be stored in the designated git repository. Consider the following `nmap` command:
 
-```
+```bash
 $ recon.sh track hackerone 'nmap -Pn -p 80,443 hackerone.com'
+```
 
+```
 Starting Nmap 7.60 ( https://nmap.org ) at 2017-11-25 20:52 PST
 Nmap scan report for hackerone.com (104.16.99.52)
 Host is up (0.0089s latency).
