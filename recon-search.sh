@@ -8,5 +8,5 @@ else
 
 	directory=$(cat ~/.recon-directory)
 
-	git -C $directory grep --context 5 --break --heading --ignore-case --extended-regexp $1
+	git -C $directory grep --context 4 --break --heading --ignore-case --extended-regexp $1
 fi
