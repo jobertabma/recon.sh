@@ -19,6 +19,6 @@ case $1 in
 		$dir/recon-search.sh "$2"
 		;;
 		*)
-		echo "usage: recon.sh {init|track|sync} [<args>]"
+		echo "usage: recon.sh {init|track|sync|history|search} [<args>]"
 		;;
 esac
