@@ -24,7 +24,7 @@ recon.sh init ~/location/of/recon-data
 When the tool is properly installed, output of commands can be captured globally and can be stored in the designated git repository. Consider the following `nmap` command:
 
 ```bash
-$ recon.sh track hackerone 'nmap -Pn -p 80,443 hackerone.com'
+recon.sh track hackerone 'nmap -Pn -p 80,443 hackerone.com'
 ```
 
 ```
