@@ -16,7 +16,7 @@ else
 		filename=$(echo $2 | md5sum)
 	fi
 
-	output=""
+	output=";; $2\n\n"
 	$2 | {
 		while IFS= read -r line
 		do
