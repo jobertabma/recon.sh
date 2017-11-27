@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [ -x "$(command -v realpath)" ]; then
+  echo "error: realpath library not installed"
+  exit
+fi
+
 dir=$(dirname $(realpath $0))
 
 case $1 in
