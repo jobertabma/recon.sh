@@ -86,3 +86,6 @@ recon.sh search '(80|443)'
 
 # Notes
 Sometimes you just need to write things down. This is what the `recon.sh notes` command is for. It keeps a single file of raw notes and tracks the output similar to `recon.sh track`.
+
+# Artifacts
+Not all command output is human-readable. For those situations, `recon.sh artifacts` can be used. It'll allow you to track a binary file in the repository.

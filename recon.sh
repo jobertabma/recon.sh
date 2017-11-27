@@ -23,9 +23,12 @@ case $1 in
 		"search")
 		$dir/recon-search.sh "$2"
 		;;
-    "notes")
-    $dir/recon-notes.sh "$2"
-    ;;
+		"notes")
+		$dir/recon-notes.sh "$2"
+		;;
+		"artifacts")
+		$dir/recon-artifacts.sh "$2" "$3" "$4"
+		;;
 		*)
 		echo "usage: recon.sh {init|track|sync|history|search|notes} [<args>]"
 		;;
