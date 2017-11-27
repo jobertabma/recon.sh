@@ -30,6 +30,6 @@ case $1 in
 		$dir/recon-artifacts.sh "$2" "$3" "$4"
 		;;
 		*)
-		echo "usage: recon.sh {init|track|sync|history|search|notes} [<args>]"
+		echo "usage: recon.sh {init|track|sync|history|search|notes|artifacts} [<args>]"
 		;;
 esac
