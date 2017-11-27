@@ -1,5 +1,5 @@
 if ! [ -e ~/.recon-directory ]; then
-	echo "error: ~/.recon-directory does not exist, run recon-init.sh."
+	echo "error: ~/.recon-directory does not exist, run recon.sh init."
 else
 	if [ -z "$1" ]; then
 		echo "usage: recon.sh notes <name>"
