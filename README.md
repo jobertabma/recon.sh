@@ -83,3 +83,6 @@ There's a lot of different reasons why you'd want to come back and search throug
 ```bash
 recon.sh search '(80|443)'
 ```
+
+# Notes
+Sometimes you just need to write things down. This is what the `recon.sh notes` command is for. It keeps a single file of raw notes and tracks the output similar to `recon.sh track`.
