@@ -25,7 +25,7 @@ else
 		done
 
 		echo -e "$output" >| "$directory/$1/$filename"
-  }
+	}
 
 	git -C "$directory" add .
 	git -C "$directory" commit --all --message "Tracked output for $1 (\"$2\")"
