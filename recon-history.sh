@@ -2,7 +2,7 @@ if ! [ -e ~/.recon-directory ]; then
 	echo "error: ~/.recon-directory does not exist, run recon-init.sh."
 else
 	if [ -z "$1" ] || [ -z "$2" ]; then
-		echo "usage: recon.sh track <name> <command>"
+		echo "usage: recon.sh history <name> <command>"
 		exit
 	fi
 
