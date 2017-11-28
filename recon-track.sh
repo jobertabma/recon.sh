@@ -16,17 +16,23 @@ else
 		filename=$(echo $2 | md5sum)
 	fi
 
+	commit()
+	{
+		git -C "$directory" add .
+		git -C "$directory" commit --all --message "Tracked output for $1 (\"$2\")"
+	}
+
 	output=";; $2\n\n"
 	$2 | {
+		trap "commit \"$1\" \"$2\"" SIGINT SIGTERM
+
 		while IFS= read -r line
 		do
 			output+="$line\n"
+			echo -e "$output" >| "$directory/$1/$filename"
 			echo "$line"
 		done
-
-		echo -e "$output" >| "$directory/$1/$filename"
 	}
 
-	git -C "$directory" add .
-	git -C "$directory" commit --all --message "Tracked output for $1 (\"$2\")"
+	commit "$1" "$2"
 fi
