@@ -29,7 +29,10 @@ case $1 in
 		"artifacts")
 		$dir/recon-artifacts.sh "$2" "$3" "$4"
 		;;
+		"help")
+		$dir/recon-help.sh
+		;;
 		*)
-		echo "usage: recon.sh {init|track|sync|history|search|notes|artifacts} [<args>]"
+		echo "usage: recon.sh {init|track|sync|history|search|notes|artifacts|help} [<args>]"
 		;;
 esac
