@@ -23,7 +23,7 @@ else
 	}
 
 	output=";; $2\n\n"
-	$2 | {
+	eval $2 | {
 		trap "commit \"$1\" \"$2\"" SIGINT SIGTERM
 
 		while IFS= read -r line
