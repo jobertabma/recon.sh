@@ -1,8 +1,6 @@
-if ! [ -e ~/.recon-directory ]; then
-	echo "error: ~/.recon-directory does not exist, run recon.sh init."
-else
-	directory=$(cat ~/.recon-directory)
+source "$(dirname $0)/recon-helpers.sh"
 
-	git -C "$directory" pull --rebase
-	git -C "$directory" push
-fi
+check_environment_requirements
+
+git -C "$directory" pull --rebase
+git -C "$directory" push

@@ -1,12 +1,10 @@
-if ! [ -e ~/.recon-directory ]; then
-	echo "error: ~/.recon-directory does not exist, run recon.sh init."
-else
-  if [ -z "$1" ]; then
-		echo "usage: recon.sh search <regex>"
-		exit
-	fi
+source "$(dirname $0)/recon-helpers.sh"
 
-	directory=$(cat ~/.recon-directory)
+check_environment_requirements
 
-	git -C $directory grep --context 4 --break --heading --ignore-case --extended-regexp $1
+if [ -z "$1" ]; then
+	echo "usage: recon.sh search <regex>"
+	exit
 fi
+
+git -C $directory grep --context 4 --break --heading --ignore-case --extended-regexp $1
