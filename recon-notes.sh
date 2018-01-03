@@ -1,21 +1,19 @@
-if ! [ -e ~/.recon-directory ]; then
-	echo "error: ~/.recon-directory does not exist, run recon.sh init."
-else
-	if [ -z "$1" ]; then
-		echo "usage: recon.sh notes <name>"
-		exit
-	fi
+source "$(dirname $0)/recon-helpers.sh"
 
-	directory=$(cat ~/.recon-directory)
+check_environment_requirements
 
-  mkdir -p "$directory/$1"
-
-	if [ -z "$EDITOR" ]; then
-		EDITOR="vim"
-	fi
-
-	$EDITOR "$directory/$1/notes.md"
-
-	git -C "$directory" add .
-	git -C "$directory" commit --all --message "Updated notes for $1"
+if [ -z "$1" ]; then
+	echo "usage: recon.sh notes <name>"
+	exit
 fi
+
+mkdir -p "$directory/$1"
+
+if [ -z "$EDITOR" ]; then
+	EDITOR="vim"
+fi
+
+$EDITOR "$directory/$1/notes.md"
+
+git -C "$directory" add .
+git -C "$directory" commit --all --message "Updated notes for $1"
